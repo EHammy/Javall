@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Add/Edit Recipe</title>
+   </head>
+   <body>
+      <h1>Add/Edit Recipe</h1>
+      <form th:action="@{/recipes/save}" th:object="${recipe}" method="post">
+         <input type="hidden" th:field="*{id}" />
+         <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" />
+         </div>
+         <div>
+            <label>Description:</label>
+            <input type="text" th:field="*{description}" />
+         </div>
+         <div>
+            <label>Ingredients:</label>
+            <textarea th:field="*{ingredients}"></textarea>
+         </div>
+         <div>
+            <label>Instructions:</label>
+            <textarea th:field="*{instructions}"></textarea>
+         </div>
+         <button type="submit">Save</button>
+      </form>
+   </body>
+</html>
